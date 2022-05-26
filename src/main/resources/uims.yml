@@ -1,0 +1,518 @@
+uims:
+  menu:
+    - name: student
+      title: 学生管理
+    - name: info
+      title: 信息管理
+    - name: score
+      title: 成绩管理
+    - name : courseManagement
+      title: 课程库
+    - name: dialog
+      title: 日志管理
+    - name: activity
+      title: 活动管理
+    - name: activityinfo
+      title: 活动参与情况
+
+  page:
+    - name: student
+      type: table
+      title: 学生管理
+      showAdd: 1
+      item:
+        - type: text
+          prop: studentNum
+          label: 学号
+        - type: link
+          prop: studentName
+          label: 姓名
+        - type: text
+          prop: sex
+          label: 性别
+        - type: text
+          prop: age
+          label: 年龄
+        - type: text
+          prop: birthday
+          label: 出生日期
+        - type: link
+          prop: course
+          label: 课程成绩
+        - type: link
+          prop: courseManagement
+          label: 选课管理
+        - type: opers
+          label: 操作
+          opers:
+            - name: edit
+            - name: delete
+      query:
+        - type: input
+          prop: numName
+          label: 请输入学号或姓名
+    - name: dialog
+      type: table
+      title: 日志管理
+      showAdd: 1
+      item:
+        - type: text
+          prop: studentName
+          label: 学生姓名
+        - type: text
+          prop: content
+          label: 内容
+        - type: text
+          prop: detail
+          label: 详情
+        - type: opers
+          label: 操作
+          opers:
+            - name: edit
+            - name: delete
+      query:
+        - type: input
+          prop: numName
+          label: 请输入学号或姓名
+    - name: dialogEdit
+      type: form
+      title: 日志信息
+      item:
+        - type: select
+          prop: studentId
+          label: 姓名
+        - type: input
+          prop: content
+          label: 内容
+        - type: input
+          prop: detail
+          label: 详情
+    - name: studentEdit
+      type: form
+      title: 学生信息
+      item:
+        - type: input
+          prop: studentNum
+          label: 学号
+        - type: input
+          prop: studentName
+          label: 姓名
+        - type: select
+          prop: sex
+          label: 性别
+          option:
+            - value: 1
+              label: 男
+            - value: 2
+              label: 女
+        - type: input
+          prop: age
+          label: 年龄
+        - type: date
+          prop: birthday
+          label: 出生日期
+        - type: input
+          prop: dept
+          label: 院系
+    - name: score
+      type: table
+      title: 成绩管理
+      showAdd: 1
+      item:
+        - type: text
+          prop: studentNum
+          label: 学号
+        - type: text
+          prop: studentName
+          label: 姓名
+        - type: text
+          prop: courseNum
+          label: 课程号
+        - type: text
+          prop: courseName
+          label: 课程名
+        - type: text
+          prop: mark
+          label: 成绩
+        - type: opers
+          label: 操作
+          opers:
+            - name: edit
+            - name: delete
+    - name: scoreEdit
+      type: form
+      title: 学生信息
+      item:
+        - type: select
+          prop: studentId
+          label: 学生
+        - type: select
+          prop: courseId
+          label: 课程
+        - type: input
+          prop: mark
+          label: 成绩
+    - name: info
+      type: table
+      title: 信息管理
+      showAdd: 1
+      item:
+        - type: text
+          prop: studentNum
+          label: 学号
+        - type: text
+          prop: studentName
+          label: 姓名
+        - type: text
+          prop: phone
+          label: 手机号码
+        - type: link
+          prop: preinfo
+          label: 入学前信息
+        - type: link
+          prop: family
+          label: 家庭
+        - type: link
+          prop: introduce
+          label: 个人简介
+        - type: link
+          prop: dialogInfo
+          label: 生活信息
+        - type: opers
+          label: 操作
+          opers:
+            - name: delete
+            - name: edit
+      query:
+        - type: input
+          prop: numName
+          label: 请输入学号或姓名
+    - name: infoEdit
+      type: form
+      title: 基本信息
+      showAdd: 1
+      item:
+        - type: select
+          prop: studentId
+          label: 学生
+        - type: input
+          prop: phone
+          label: 手机号码
+    - name: familyEdit
+      type: form
+      title: 家庭信息
+      showAdd: 1
+      item:
+        - type: text
+          prop: studentNum
+          label: 学生ID
+        - type: input
+          prop: father
+          label: 父亲姓名
+        - type: input
+          prop: fphone
+          label: 父亲号码
+        - type: input
+          prop: fwork_address
+          label: 父亲工作地址
+        - type: input
+          prop: foccupation
+          label: 父亲职业
+        - type: input
+          prop: mother
+          label: 母亲姓名
+        - type: input
+          prop: mphone
+          label: 母亲号码
+        - type: input
+          prop: mwork_address
+          label: 母亲工作地址
+        - type: input
+          prop: moccupation
+          label: 母亲职业
+    - name: preinfoEdit
+      type: form
+      title: 入学前信息
+      showAdd: 1
+      item:
+        - type: text
+          prop: studentNum
+          label: 学生ID
+        - type: input
+          prop: priSchool
+          label: 小学名称
+        - type: input
+          prop: priTeacher
+          label: 小学班主任
+        - type: input
+          prop: priPlace
+          label: 小学地址
+        - type: input
+          prop: junSchool
+          label: 中学名称
+        - type: input
+          prop: junPlace
+          label: 中学地址
+        - type: input
+          prop: junTeacher
+          label: 中学班主任
+        - type: input
+          prop: highSchool
+          label: 高中名称
+        - type: input
+          prop: highPlace
+          label: 高中地址
+        - type: input
+          prop: highTeacher
+          label: 高中班主任
+    - name: courseEdit
+      type: form
+      title: 学习成绩
+      item:
+        - type: text
+          prop: student0
+          label: 学生
+        - type: text
+          prop: gpa
+          label: 绩点
+        - type: text
+          prop: course0
+          label: 课程名
+        - type: text
+          prop: score0
+          label: 分数
+        - type: text
+          prop: course1
+          label: 课程名
+        - type: text
+          prop: score1
+          label: 分数
+        - type: text
+          prop: course2
+          label: 课程名
+        - type: text
+          prop: score2
+          label: 分数
+    - name: courseManagement
+      type: table
+      title: 课程库
+      showAdd: 1
+      item:
+          - type: text
+            prop: studentName
+            label: 正在操作
+          - type: text
+            prop: courseNum
+            label: 课程号
+          - type: text
+            prop: courseName
+            label: 课程名
+          - type: text
+            prop: preCourse
+            label: 先行课
+          - type: text
+            prop: credit
+            label: 学分
+          - type: text
+            prop: isSelect
+            label: 是否已经选择
+          - type: link
+            prop: LessonInfo
+            label: 详情
+          - type: opers
+            name: 操作
+            opers:
+              - name: scoreAdd
+                label: 选择课程
+              - name: edit
+                label: 编辑
+              - name: delete
+                label: 删除
+    - name: dialogForm
+      type: form
+      title: 个人日志
+      item:
+        - type: text
+          prop: student0
+          label: 学生
+        - type: text
+          prop: content0
+          label: 内容
+        - type: text
+          prop: detail0
+          label: 详情
+        - type: text
+          prop: content1
+          label: 内容
+        - type: text
+          prop: detail1
+          label: 详情
+    - name: LessonInfoEdit
+      type: form
+      title: 课程信息
+      item:
+          - type: text
+            prop: className
+            label: 课程
+          - type: input
+            prop: textBook
+            label: 教科书
+          - type: input
+            prop: referenceBook
+            label: 参考资料
+          - type: input
+            prop: attendance
+            label: 考勤
+          - type: input
+            prop: examination
+            label: 考试信息
+    - name: courseManagementEdit
+      type: form
+      title: 课程库管理
+      item:
+        - type: input
+          prop: courseNum
+          label: 课程号
+        - type: input
+          prop: courseName
+          label: 课程名
+        - type: input
+          prop: preCourse
+          label: 先行课
+        - type: select
+          prop: credit
+          label: 学分
+          option:
+              - value: 1
+                label: 1
+              - value: 2
+                label: 2
+              - value: 3
+                label: 3
+              - value: 4
+                label: 4
+              - value: 5
+                label: 5
+              - value: 6
+                label: 6
+              - value: 7
+                label: 7
+    - name: activity
+      type: table
+      title: 活动管理
+      showAdd: 1
+      item:
+        - type: text
+          prop: activityType
+          label: 活动类型
+        - type: text
+          prop: activityName
+          label: 活动名称
+        - type: text
+          prop: activityAdd
+          label: 活动地址
+        - type: text
+          prop: activityDate
+          label: 活动日期
+        - type: text
+          prop: organizer
+          label: 主办单位
+        - type: link
+          prop: activityInfo
+          label: 参与情况
+        - type: opers
+          name: 操作
+          opers:
+            - name: edit
+            - name: delete
+      query:
+        - type: input
+          prop: name
+          label: 请输入活动名称
+    - name: activityEdit
+      type: form
+      title: 活动信息
+      item:
+        - type: select
+          prop: activityTypeId
+          label: 活动类型
+        - type: input
+          prop: activityName
+          label: 活动名称
+        - type: input
+          prop: activityAdd
+          label: 活动地址
+        - type: input
+          prop: organizer
+          label: 主办单位
+        - type: date
+          prop: activityDate
+          label: 活动日期
+    - name: activityInfo
+      type: table
+      title: 活动参与情况
+      showAdd: 1
+      item:
+        - type: text
+          prop: studentNum
+          label: 学号
+        - type: text
+          prop: studentName
+          label: 姓名
+        - type: text
+          prop: job
+          label: 职位
+        - type: text
+          prop: hour
+          label: 工作时长（小时）
+        - name: text
+          prop: activityName
+          label: 活动名称
+        - type: opers
+          name: 操作
+          opers:
+            - name: edit
+            - name: delete
+      query:
+        - type: input
+          prop: numName
+          label: 请输入学号或姓名
+    - name: activityInfoEdit
+      type: form
+      title: 参与情况
+      item:
+        - type: select
+          prop: studentId
+          label: 姓名
+        - type: select
+          prop: activityId
+          label: 活动名称
+        - type: input
+          prop: job
+          label: 职位
+        - type: input
+          prop: hour
+          label: 工作时长（小时）
+    - name: introduceEdit
+      type: form
+      title: 简历信息1
+      item:
+        - type: input
+          prop: studentNum
+          label: 学生ID
+        - type: input
+          prop: address
+          label: 生源地
+        - type: input
+          prop: graduateSchool
+          label: 毕业院校
+        - type: input
+          prop: competition
+          label: 学生竞赛经历
+        - type: input
+          prop: socialPractice
+          label: 社会实践
+        - type: input
+          prop: credit
+          label: 学习荣誉
+
